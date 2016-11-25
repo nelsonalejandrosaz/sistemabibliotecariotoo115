@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-24-2016 03:13:29 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ues.too115.sistemabibliotecariomaven.models.Prestamo" table="PRESTAMO" schema="TOO115" optimistic-lock="version">
+        <id name="idprestamo" type="big_decimal">
+            <column name="IDPRESTAMO" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="usuario" class="com.ues.too115.sistemabibliotecariomaven.models.Usuario" fetch="select">
+            <column name="IDUSUARIO" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="recurso" class="com.ues.too115.sistemabibliotecariomaven.models.Recurso" fetch="select">
+            <column name="IDRECURSO" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="fechainicio" type="date">
+            <column name="FECHAINICIO" length="7" not-null="true" />
+        </property>
+        <property name="fechafin" type="date">
+            <column name="FECHAFIN" length="7" not-null="true" />
+        </property>
+        <property name="observaciones" type="string">
+            <column name="OBSERVACIONES" length="248" />
+        </property>
+    </class>
+</hibernate-mapping>
