@@ -41,7 +41,7 @@ public class RecursoController {
     RecursoService recursoDAO = new RecursoService();
     BibliotecaService bibliotecaDAO = new BibliotecaService();
 
-    @RequestMapping(value = "recursoList", method = RequestMethod.GET)
+    @RequestMapping(value = "admin/recursoList", method = RequestMethod.GET)
     public String RecursoList(ModelMap model) {
         String titulo = "Lista de RECURSOS";
         List<Recurso> recursos = recursoDAO.getAll();
@@ -50,7 +50,7 @@ public class RecursoController {
         return "admin/recursoList";
     }
 
-    @RequestMapping(value = "recursoEdit", method = RequestMethod.GET)
+    @RequestMapping(value = "admin/recursoEdit", method = RequestMethod.GET)
     public String RecursoEdit(ModelMap model, HttpServletRequest request) {
         String titulo = "Editar Recurso";
         int id = Integer.parseInt(request.getParameter("id"));
@@ -63,7 +63,7 @@ public class RecursoController {
         return "admin/recursoEdit";
     }
 
-    @RequestMapping(value = "recursoEdit", method = RequestMethod.POST)
+    @RequestMapping(value = "admin/recursoEdit", method = RequestMethod.POST)
     public void RecursoEdit(HttpServletRequest request, HttpServletResponse response) {
         int idSubcategoria = Integer.parseInt(request.getParameter("subcategoria"));
         Subcategoria subcategoria = subcategoriaDAO.getbyID(idSubcategoria);
@@ -90,13 +90,13 @@ public class RecursoController {
         recurso.setPrestamointerno(BigDecimal.valueOf(Integer.parseInt(request.getParameter("prestamointerno"))));
         recursoDAO.update(recurso);
         try {
-            response.sendRedirect("recursoList");
+            response.sendRedirect("admin/recursoList");
         } catch (IOException ex) {
             Logger.getLogger(RecursoController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    @RequestMapping(value = "recursoAdd", method = RequestMethod.GET)
+    @RequestMapping(value = "admin/recursoAdd", method = RequestMethod.GET)
     public String RecursoAdd(ModelMap model, HttpServletRequest request) {
         String titulo = "Agregar Recurso";
         Recurso recurso = new Recurso();
@@ -108,7 +108,7 @@ public class RecursoController {
         return "admin/recursoAdd";
     }
 
-    @RequestMapping(value = "recursoAdd.html", method = RequestMethod.POST)
+    @RequestMapping(value = "admin/recursoAdd.html", method = RequestMethod.POST)
     public void RecursoAdd(HttpServletRequest request, HttpServletResponse response) {
         int idSubcategoria = Integer.parseInt(request.getParameter("subcategoria"));
         Subcategoria subcategoria = subcategoriaDAO.getbyID(idSubcategoria);
@@ -137,13 +137,13 @@ public class RecursoController {
         recurso.setBiblioteca(biblioteca);
         recursoDAO.add(recurso);
         try {
-            response.sendRedirect("recursoList");
+            response.sendRedirect("admin/recursoList");
         } catch (IOException ex) {
             Logger.getLogger(RecursoController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    @RequestMapping(value = "recursoDelete", method = RequestMethod.GET)
+    @RequestMapping(value = "admin/recursoDelete", method = RequestMethod.GET)
     public String RecursoDelete(ModelMap model, HttpServletRequest request) {
         String titulo = "Seguro desea eliminar";
         String idString = request.getParameter("id");
@@ -160,7 +160,7 @@ public class RecursoController {
         int id = Integer.parseInt(idString);
         recursoDAO.delete(id);
         try {
-            response.sendRedirect("recursoList");
+            response.sendRedirect("admin/recursoList");
         } catch (IOException ex) {
             Logger.getLogger(RecursoController.class.getName()).log(Level.SEVERE, null, ex);
         }

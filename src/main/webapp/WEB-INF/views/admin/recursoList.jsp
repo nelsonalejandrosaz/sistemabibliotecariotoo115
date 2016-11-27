@@ -13,7 +13,7 @@
         <div class="container">
             <h1>${titulo}</h1>
             <hr>
-            <a class="btn btn-success" role="button" href="recursoAdd.html">Adicionar Recurso</a> <a class="btn btn-default" role="button" href="adminIndex">Regresar</a>
+            <a class="btn btn-success" role="button" href="recursoAdd">Adicionar Recurso</a> <a class="btn btn-default" role="button" href="adminIndex">Regresar</a>
             <hr>
             <div class="table-responsive">
                 <table class="table table-hover">
@@ -34,7 +34,7 @@
                             <td><c:out value="${recurso.subcategoria.nombresubcategoria}"/></td>
                             <td><c:out value="${recurso.autores}"/></td>
                             <td><c:out value="${recurso.fecha}"/></td>
-                            <td style="text-align: right"><a class="btn btn-warning" role="button" href="recursoEdit.html?id=${recurso.idrecurso}"><span class="glyphicon glyphicon-pencil"></span></a> <a class="btn btn-danger" role="button" href="recursoDelete.html?id=${recurso.idrecurso}"><span class="glyphicon glyphicon-trash"></span></a></td>
+                            <td style="text-align: right"><a class="btn btn-warning" role="button" href="recursoEdit?id=${recurso.idrecurso}"><span class="glyphicon glyphicon-pencil"></span></a> <a class="btn btn-danger" role="button" href="recursoDelete?id=${recurso.idrecurso}"><span class="glyphicon glyphicon-trash"></span></a></td>
                         </tr>
                     </c:forEach>
                 </table>

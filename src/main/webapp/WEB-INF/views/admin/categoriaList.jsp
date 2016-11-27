@@ -13,7 +13,7 @@
         <div class="container">
             <h1>${titulo}</h1>
             <hr>
-            <a class="btn btn-success" role="button" href="categoriaAdd">Adicionar Categoria</a> <a class="btn btn-default" role="button" href="adminIndex">Regresar</a>
+            <a class="btn btn-success" role="button" href="admin/categoriaAdd">Adicionar Categoria</a> <a class="btn btn-default" role="button" href="admin/adminIndex">Regresar</a>
             <hr>
             <div class="table-responsive">
                 <table class="table table-hover">
@@ -26,7 +26,7 @@
                         <tr>
                             <td><c:out value="${categoria.idcategoria}"/></td>
                             <td><c:out value="${categoria.nombrecategoria}"/></td>
-                            <td style="text-align: right"><a class="btn btn-warning" role="button" href="categoriaEdit?id=${categoria.idcategoria}"><span class="glyphicon glyphicon-pencil"></span></a> <a class="btn btn-danger" role="button" href="categoriaDelete?id=${categoria.idcategoria}"><span class="glyphicon glyphicon-trash"></span></a></td>
+                            <td style="text-align: right"><a class="btn btn-warning" role="button" href="admin/categoriaEdit?id=${categoria.idcategoria}"><span class="glyphicon glyphicon-pencil"></span></a> <a class="btn btn-danger" role="button" href="admin/categoriaDelete?id=${categoria.idcategoria}"><span class="glyphicon glyphicon-trash"></span></a></td>
                         </tr>
                     </c:forEach>
                 </table>

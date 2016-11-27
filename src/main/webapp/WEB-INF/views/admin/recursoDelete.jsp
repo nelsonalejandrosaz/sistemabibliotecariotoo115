@@ -18,7 +18,7 @@
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <h4>Seguro que desea eliminar el recurso: <c:out value="${command.nombrerecurso}"/></h4>
-                            <form:button class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span> Eliminar</form:button> <a class="btn btn-warning" role="button" href="recursoList.html"><span class="glyphicon glyphicon-remove-sign"></span> Cancelar</a>
+                            <form:button class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span> Eliminar</form:button> <a class="btn btn-warning" role="button" href="admin/recursoList.html"><span class="glyphicon glyphicon-remove-sign"></span> Cancelar</a>
                             </div>
                         </div>
                     </div>

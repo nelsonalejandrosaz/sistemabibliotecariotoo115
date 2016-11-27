@@ -17,22 +17,22 @@
             <hr>
             <div class="btn-group btn-group-justified" role="group" aria-label="...">
                 <div class="btn-group" role="group">
-                    <a role="button" class="btn btn-default" href="<c:url value="/recursoList"/>">Recursos</a>
+                    <a role="button" class="btn btn-default" href="<c:url value="admin/recursoList"/>">Recursos</a>
                 </div>
                 <div class="btn-group" role="group">
-                    <a role="button" class="btn btn-default" href="<c:url value="/recursoList"/>">Categorias</a>
+                    <a role="button" class="btn btn-default" href="<c:url value="admin/categoriaList"/>">Categorias</a>
                 </div>
                 <div class="btn-group" role="group">
-                    <a role="button" class="btn btn-default" href="<c:url value="/recursoList"/>">Subcategorias</a>
+                    <a role="button" class="btn btn-default" href="<c:url value="admin/subcategoriaList"/>">Subcategorias</a>
                 </div>
             </div>
             <hr>
             <div class="btn-group btn-group-justified" role="group" aria-label="...">
                 <div class="btn-group" role="group">
-                    <a role="button" class="btn btn-default" href="<c:url value="/recursoList"/>">Administradores</a>
+                    <a role="button" class="btn btn-default" href="<c:url value="admin/usuarioAdminList"/>">Administradores</a>
                 </div>
                 <div class="btn-group" role="group">
-                    <a role="button" class="btn btn-default" href="<c:url value="/recursoList"/>">Lectores</a>
+                    <a role="button" class="btn btn-default" href="<c:url value="admin/usuarioLectorList"/>">Lectores</a>
                 </div>
             </div>
         </div>        

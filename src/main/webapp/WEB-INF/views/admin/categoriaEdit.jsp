@@ -28,7 +28,7 @@
                 <!-- Boton enviar -->
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <form:button class="btn btn-success" ><span class="glyphicon glyphicon-refresh"></span> Actualizar</form:button> <a class="btn btn-warning" role="button" href="categoriaList.html"><span class="glyphicon glyphicon-remove-sign"></span> Cancelar</a>
+                        <form:button class="btn btn-success" ><span class="glyphicon glyphicon-refresh"></span> Actualizar</form:button> <a class="btn btn-warning" role="button" href="admin/categoriaList.html"><span class="glyphicon glyphicon-remove-sign"></span> Cancelar</a>
                     </div>
                 </div>
             </form:form>

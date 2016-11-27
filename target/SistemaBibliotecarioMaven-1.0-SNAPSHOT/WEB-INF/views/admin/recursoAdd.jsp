@@ -169,7 +169,7 @@
                 <!-- Boton enviar -->
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <form:button class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Agregar</form:button> <a class="btn btn-warning" role="button" href="subcategoriaList.html"><span class="glyphicon glyphicon-remove-sign"></span> Cancelar</a>
+                        <form:button class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Agregar</form:button> <a class="btn btn-warning" role="button" href="admin/subcategoriaList.html"><span class="glyphicon glyphicon-remove-sign"></span> Cancelar</a>
                     </div>
                 </div>
             </form:form>
@@ -183,7 +183,7 @@
 	$('#categoriaS').change(
 		function() {
 			id = $(this).val();
-                        $("#subcategoriaS").load("subcategoriaByCategoria.html?id="+id);
+                        $("#subcategoriaS").load("admin/subcategoriaByCategoria.html?id="+id);
 		});
         });
     </script>

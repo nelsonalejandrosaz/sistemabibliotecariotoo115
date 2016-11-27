@@ -16,7 +16,7 @@ public class Usuario  implements java.io.Serializable {
      private Persona persona;
      private String usuario;
      private String password;
-     private BigDecimal rol;
+     private BigDecimal rol;  // 0 = Admin  --- 1 = Lector
      private String email;
      private Set prestamos = new HashSet(0);
 

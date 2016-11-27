@@ -28,7 +28,7 @@ public class CategoriaController {
     
     CategoriaService categoriaService = new CategoriaService();
     
-    @RequestMapping(value = "categoriaList")
+    @RequestMapping(value = "admin/categoriaList")
     public String CategoriaList(ModelMap model) {
         String titulo = "Lista de categorias";
         List<Categoria> categorias = categoriaService.getAll();
@@ -37,7 +37,7 @@ public class CategoriaController {
         return "admin/categoriaList";
     }
     
-    @RequestMapping(value = "categoriaEdit",method = RequestMethod.GET)
+    @RequestMapping(value = "admin/categoriaEdit",method = RequestMethod.GET)
     public String CategoriaEdit(ModelMap model, HttpServletRequest request) {
         String titulo = "Editar Categoria";
         String idString = request.getParameter("id");
@@ -48,7 +48,7 @@ public class CategoriaController {
         return "admin/categoriaEdit";
     }
     
-    @RequestMapping(value = "categoriaEdit",method = RequestMethod.POST)
+    @RequestMapping(value = "admin/categoriaEdit",method = RequestMethod.POST)
     public void CategoriaEdit(ModelMap model, HttpServletRequest request, HttpServletResponse response) {
         Categoria categoria = new Categoria();
         int id = Integer.parseInt(request.getParameter("id"));
@@ -56,13 +56,13 @@ public class CategoriaController {
         categoria.setNombrecategoria(request.getParameter("nombrecategoria"));
         categoriaService.update(categoria);
         try {
-            response.sendRedirect("categoriaList");
+            response.sendRedirect("admin/categoriaList");
         } catch (IOException ex) {
             Logger.getLogger(CategoriaController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
-    @RequestMapping(value = "categoriaDelete",method = RequestMethod.GET)
+    @RequestMapping(value = "admin/categoriaDelete",method = RequestMethod.GET)
     public String CategoriaDelete(ModelMap model, HttpServletRequest request) {
         String titulo = "Seguro desea eliminar";
         String idString = request.getParameter("id");
@@ -73,19 +73,19 @@ public class CategoriaController {
         return "admin/categoriaDelete";
     }
     
-    @RequestMapping(value = "categoriaDelete",method = RequestMethod.POST)
+    @RequestMapping(value = "admin/categoriaDelete",method = RequestMethod.POST)
     public void CategoriaDelete(HttpServletRequest request, HttpServletResponse response) {
         String idString = request.getParameter("id");
         int id = Integer.parseInt(idString);
         categoriaService.delete(id);
         try {
-            response.sendRedirect("categoriaList");
+            response.sendRedirect("admin/categoriaList");
         } catch (IOException ex) {
             Logger.getLogger(CategoriaController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
-    @RequestMapping(value = "categoriaAdd", method = RequestMethod.GET)
+    @RequestMapping(value = "admin/categoriaAdd", method = RequestMethod.GET)
     public String CategoriaAdd(ModelMap model, HttpServletRequest request) {
         String titulo = "Agregar nueva categoria";
         Categoria categoria = new Categoria();
@@ -94,13 +94,13 @@ public class CategoriaController {
         return "admin/categoriaAdd";
     }
     
-     @RequestMapping(value = "categoriaAdd", method = RequestMethod.POST)
+     @RequestMapping(value = "admin/categoriaAdd", method = RequestMethod.POST)
     public void CategoriaAdd(HttpServletRequest request, HttpServletResponse response) {
         Categoria categoria = new Categoria();
         categoria.setNombrecategoria(request.getParameter("nombrecategoria"));
         categoriaService.add(categoria);
         try {
-            response.sendRedirect("categoriaList");
+            response.sendRedirect("admin/categoriaList");
         } catch (IOException ex) {
             Logger.getLogger(CategoriaController.class.getName()).log(Level.SEVERE, null, ex);
         }
